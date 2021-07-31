@@ -1,15 +1,6 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
-const P = styled.p`
-  font-size: 0.5em;
-`;
-
-const Titulo = styled.p`
-  font-size: 0.6em;
-  font-weight: bold;
-`;
+import { P, Titulo } from './Styles/global.styled';
 
 function Video({ title, imagen, description, llave }) {
   return (

@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styled from 'styled-components';
-
-const Li = styled.li`
-  font-size: 0.8em;
-  padding: 0px 10px;
-`;
+import { Li } from '../Styles/global.styled';
 
 const Navegacion = () => {
   return (

@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styled from 'styled-components';
-
-const Button = styled.button`
-  color: #fff;
-`;
+import { Button } from '../Styles/global.styled';
 
 const Buscar = () => {
   return (

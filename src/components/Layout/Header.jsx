@@ -1,15 +1,11 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { Link } from 'react-router-dom';
+
+import { Nav } from '../Styles/global.styled';
 
 import Buscar from './Buscar';
 import Navegacion from './Navegacion';
-
-const Nav = styled.nav`
-  background-color: #8ec045;
-`;
 
 const Header = () => {
   return (
