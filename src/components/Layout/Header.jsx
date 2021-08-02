@@ -7,9 +7,9 @@ import { Nav } from '../Styles/global.styled';
 import Buscar from './Buscar';
 import Navegacion from './Navegacion';
 
-const Header = () => {
+const Header = ({ onSearch }) => {
   return (
-    <Nav className="navbar navbar-expand-lg navbar-light">
+    <Nav className="navbar navbar-expand-lg navbar-light" id="arriba">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand text-uppercase">
           YouTube client app
@@ -28,7 +28,7 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarText">
           <Navegacion />
           <span className="navbar-text">
-            <Buscar />
+            <Buscar onSearch={onSearch} />
           </span>
         </div>
       </div>

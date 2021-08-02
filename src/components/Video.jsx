@@ -1,15 +1,37 @@
 import React from 'react';
 
-import { P, Titulo } from './Styles/global.styled';
+import { Link } from 'react-router-dom';
 
-function Video({ title, imagen, description, llave }) {
+import { P } from './Styles/global.styled';
+
+function Video({
+  title,
+  imagen,
+  description,
+  llave,
+  videoList,
+  setVideoList,
+  videoDescription,
+  clasesCard,
+}) {
+  const selectVideo = (videoId, itemDescription, itemTitle) => {
+    setVideoList({
+      ...videoList,
+      selectedVideoId: videoId,
+      selectedVideoDescription: itemDescription,
+      selectedVideoTitle: itemTitle,
+    });
+  };
+
   return (
-    <div role="listitem" key={llave} className="col-sm-6 col-lg-4 col-xl-3">
+    <div className={clasesCard}>
       <div className="card h-100">
         <img src={imagen} className="img-fluid" alt={title} />
         <div className="card-body">
-          <Titulo>{title}</Titulo>
-          <P className="card-text">{description}</P>
+          <Link to="/video" onClick={() => selectVideo(llave, videoDescription, title)}>
+            {title}
+          </Link>
+          <P>{description}</P>
         </div>
       </div>
     </div>

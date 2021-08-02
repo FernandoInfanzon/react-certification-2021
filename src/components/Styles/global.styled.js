@@ -21,6 +21,11 @@ export const Titulo = styled.p`
   font-weight: bold;
 `;
 
+export const BigTitulo = styled.p`
+  font-size: 1.2em;
+  font-weight: bold;
+`;
+
 /* <Buscar /> */
 export const Button = styled.button`
   color: #fff;

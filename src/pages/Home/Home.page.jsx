@@ -11,11 +11,13 @@ const H1 = styled.h1`
   text-align: center;
 `;
 
-function HomePage() {
+function HomePage({ videoList, setVideoList }) {
+  const clasesCard = 'col-sm-6 col-lg-4 col-xl-3';
+
   return (
     <>
       <H1>Welcome to the Challenge!</H1>
-      <Videos />
+      <Videos videoList={videoList} setVideoList={setVideoList} clasesCard={clasesCard} />
     </>
   );
 }
