@@ -16,7 +16,7 @@ function HomePage({ videoList, setVideoList }) {
 
   return (
     <>
-      <H1>Welcome to the Challenge!</H1>
+      <H1 role="heading">Welcome to the Challenge!</H1>
       <Videos videoList={videoList} setVideoList={setVideoList} clasesCard={clasesCard} />
     </>
   );

@@ -24,6 +24,13 @@ export const Titulo = styled.p`
 export const BigTitulo = styled.p`
   font-size: 1.2em;
   font-weight: bold;
+  padding-top: 20px;
+`;
+
+export const H2 = styled.h2`
+  font-size: 1em;
+  font-weight: bold;
+  padding-top: 20px;
 `;
 
 /* <Buscar /> */

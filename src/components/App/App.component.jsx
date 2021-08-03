@@ -39,7 +39,7 @@ function App() {
             <HomePage videoList={videoList} setVideoList={setVideoList} />
           </Route>
           <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/video">
+          <Route exact path="/video/:id">
             <Video videoList={videoList} setVideoList={setVideoList} />
           </Route>
           <Route path="*">

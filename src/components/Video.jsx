@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { P } from './Styles/global.styled';
+import { P, Titulo } from './Styles/global.styled';
 
 function Video({
   title,
@@ -23,13 +23,17 @@ function Video({
     });
   };
 
+  const url = `/video/${videoList.selectedVideoId}`;
+
   return (
     <div className={clasesCard}>
       <div className="card h-100">
-        <img src={imagen} className="img-fluid" alt={title} />
+        <Link to={url} onClick={() => selectVideo(llave, videoDescription, title)}>
+          <img src={imagen} className="img-fluid" alt={title} />
+        </Link>
         <div className="card-body">
-          <Link to="/video" onClick={() => selectVideo(llave, videoDescription, title)}>
-            {title}
+          <Link to={url} onClick={() => selectVideo(llave, videoDescription, title)}>
+            <Titulo>{title}</Titulo>
           </Link>
           <P>{description}</P>
         </div>
