@@ -1,20 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
-import styled from 'styled-components';
+import { Button } from '../Styles/global.styled';
 
-const Button = styled.button`
-  color: #fff;
-`;
+const Buscar = ({ onSearch }) => {
+  const [value, setValue] = useState({
+    word: 'mexico',
+  });
 
-const Buscar = () => {
+  const handleChange = (e) => {
+    setValue({
+      ...value,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  useEffect(
+    () => {
+      onSearch('mexico');
+    },
+    // eslint-disable-next-line
+    []
+  );
+
+  const history = useHistory();
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    onSearch(value.word);
+    try {
+      // await dispatch(action) // dispatch to redux or send a fetch
+      history.push('/'); // redirects if no errors
+    } catch (err) {
+      history.push('*'); // redirects if an error
+    }
+  };
+
   return (
-    <form className="d-flex">
+    <form className="d-flex" onSubmit={onSubmit}>
       <input
         className="form-control me-2"
-        type="search"
+        type="text"
         placeholder="Search"
         aria-label="Search"
+        name="word"
+        value={value.word}
+        onChange={handleChange}
       />
       <Button className="btn btn-outline-success" type="submit">
         Search

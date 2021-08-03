@@ -5,10 +5,10 @@ import './Layout.styles.css';
 import Header from './Header';
 import Footer from './Footer';
 
-function Layout({ children }) {
+function Layout({ children, onSearch }) {
   return (
     <>
-      <Header />
+      <Header onSearch={onSearch} />
       <main className="container pb-5">{children}</main>
       <Footer />
     </>
