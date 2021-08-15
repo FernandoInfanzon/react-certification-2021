@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
-/* <Header/> */
-export const Nav = styled.nav`
-  background-color: #8ec045;
+/* Home */
+export const H1 = styled.h1`
+  padding-top: 3rem;
+  text-align: center;
 `;
+
+/* <Header/> */
+// export const Nav = styled.nav`
+//   background-color: #8ec045;
+// `;
 
 /* <Navegacion /> */
 export const Li = styled.li`
@@ -35,7 +41,7 @@ export const H2 = styled.h2`
 
 /* <Buscar /> */
 export const Button = styled.button`
-  color: #fff;
+  color: black;
 `;
 
 /* <Footer /> */

@@ -2,16 +2,24 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Nav } from '../Styles/global.styled';
-
 import Buscar from './Buscar';
 import Navegacion from './Navegacion';
 
-const Header = ({ onSearch }) => {
+import './Layout.styles.css';
+
+const Header = ({ onSearch, theme, handleClick }) => {
+  const HeaderClasses = theme
+    ? 'navbar navbar-expand-lg navbar-light bg-obscuro'
+    : 'navbar navbar-expand-lg navbar-light bg-techno';
+  const LogoClasses = theme
+    ? 'navbar-brand text-uppercase text-light'
+    : 'navbar-brand text-uppercase text-dark';
+  const LinkClasses = theme ? 'text-light' : 'text-dark';
+
   return (
-    <Nav className="navbar navbar-expand-lg navbar-light" id="arriba">
+    <nav className={HeaderClasses} id="arriba">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand text-uppercase">
+        <Link to="/" className={LogoClasses}>
           YouTube client app
         </Link>
         <button
@@ -26,13 +34,13 @@ const Header = ({ onSearch }) => {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarText">
-          <Navegacion />
+          <Navegacion handleClick={handleClick} LinkClasses={LinkClasses} />
           <span className="navbar-text">
-            <Buscar onSearch={onSearch} />
+            <Buscar onSearch={onSearch} LinkClasses={LinkClasses} />
           </span>
         </div>
       </div>
-    </Nav>
+    </nav>
   );
 };
 
