@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useReducer } from 'react';
 
 import './Layout.styles.css';
 
@@ -7,12 +7,28 @@ import Footer from './Footer';
 
 import ThemeContext from '../../context/ThemeContext';
 
+
 function Layout({ children, onSearch }) {
-  const [darkMode, setDarkMode] = useState(false);
+
+  const initialState = {
+    darkMode:false
+  }
+
+const reducer = (state, action)=>{
+  switch (action.type) {
+    case "DARKMODETHEME":
+      return !state.darkMode;
+    default:
+      return state;
+  }
+}
+
+  const [state, dispatch] = useReducer(reducer,initialState);
+
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleClick = () => {
-    setDarkMode(!darkMode);
+    dispatch({type:"DARKMODETHEME"});
     setTheme(!theme);
   };
 
