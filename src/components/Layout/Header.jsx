@@ -9,7 +9,7 @@ import './Layout.styles.css';
 
 const Header = ({ onSearch, theme, handleClick }) => {
   const HeaderClasses = theme
-    ? 'navbar navbar-expand-lg navbar-light bg-obscuro'
+    ? 'navbar navbar-expand-lg navbar-dark bg-obscuro'
     : 'navbar navbar-expand-lg navbar-light bg-techno';
   const LogoClasses = theme
     ? 'navbar-brand text-uppercase text-light'
