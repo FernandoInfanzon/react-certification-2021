@@ -10,7 +10,7 @@ const Footer = () => {
         <SmallP className="text-muted text-center">
           Wizeline Academy - 2021 React Bootcamp
         </SmallP>
-        <SmallP className="text-muted text-center">Mini Challenge 3</SmallP>
+        <SmallP className="text-muted text-center">Mini Challenge 4</SmallP>
       </div>
     </footer>
   );

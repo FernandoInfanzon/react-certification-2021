@@ -7,28 +7,27 @@ import Footer from './Footer';
 
 import ThemeContext from '../../context/ThemeContext';
 
-
 function Layout({ children, onSearch }) {
-
   const initialState = {
-    darkMode:false
-  }
+    darkMode: false,
+  };
 
-const reducer = (state, action)=>{
-  switch (action.type) {
-    case "DARKMODETHEME":
-      return !state.darkMode;
-    default:
-      return state;
-  }
-}
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case 'DARKMODETHEME':
+        return !state.darkMode;
+      default:
+        return state;
+    }
+  };
 
-  const [state, dispatch] = useReducer(reducer,initialState);
+  // eslint-disable-next-line
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleClick = () => {
-    dispatch({type:"DARKMODETHEME"});
+    dispatch({ type: 'DARKMODETHEME' });
     setTheme(!theme);
   };
 
