@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { P, Titulo } from './Styles/global.styled';
+import { P, Titulo, Imagen } from './Styles/global.styled';
 
 function Video({
   title,
@@ -29,7 +29,7 @@ function Video({
     <div className={clasesCard}>
       <div className="card h-100">
         <Link to={url} onClick={() => selectVideo(llave, videoDescription, title)}>
-          <img src={imagen} className="img-fluid" alt={title} />
+          <Imagen src={imagen} alt={title} />
         </Link>
         <div className="card-body">
           <Link to={url} onClick={() => selectVideo(llave, videoDescription, title)}>

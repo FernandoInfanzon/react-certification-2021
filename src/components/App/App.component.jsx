@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import HomePage from '../../pages/Home';
+import Home from '../../pages/Home';
 import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import Video from '../../pages/Video';
@@ -36,7 +36,7 @@ function App() {
       <Layout onSearch={onSearch}>
         <Switch>
           <Route exact path="/">
-            <HomePage videoList={videoList} setVideoList={setVideoList} />
+            <Home videoList={videoList} setVideoList={setVideoList} />
           </Route>
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/video/:id">

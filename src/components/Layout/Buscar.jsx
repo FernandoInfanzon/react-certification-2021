@@ -3,7 +3,10 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { Button } from '../Styles/global.styled';
 
-const Buscar = ({ onSearch }) => {
+const Buscar = ({ onSearch, LinkClasses }) => {
+  const ButtonClasses = `btn btn-outline-success ${LinkClasses}`;
+  const ColorIcon = LinkClasses === 'text-dark' ? 'black' : 'white';
+
   const [value, setValue] = useState({
     word: 'mexico',
   });
@@ -47,7 +50,7 @@ const Buscar = ({ onSearch }) => {
         value={value.word}
         onChange={handleChange}
       />
-      <Button className="btn btn-outline-success" type="submit">
+      <Button className={ButtonClasses} type="submit">
         Search
       </Button>
       <Link to="/login" className="ps-4">
@@ -55,7 +58,7 @@ const Buscar = ({ onSearch }) => {
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
-          fill="currentColor"
+          fill={ColorIcon}
           className="bi bi-person-circle"
           viewBox="0 0 16 16"
         >

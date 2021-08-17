@@ -5,7 +5,7 @@ import Videos from '../../components/Videos';
 
 import youtubeApi from '../../api/youtube';
 
-import { P, H2, BigTitulo } from '../../components/Styles/global.styled';
+import { P, H2, BigTitulo, HRVideo } from '../../components/Styles/global.styled';
 
 function VideoPage({ videoList, setVideoList }) {
   const onRelated = async (keyword) => {
@@ -37,8 +37,9 @@ function VideoPage({ videoList, setVideoList }) {
           <div className="ratio ratio-16x9">
             <iframe src={url} title={videoList.selectedVideoTitle} allowFullScreen />
           </div>
-          <H2>{videoList.selectedVideoTitle}</H2>
+          <H2 className="text-danger">{videoList.selectedVideoTitle}</H2>
           <P>{videoList.selectedVideoDescription}</P>
+          <HRVideo />
         </div>
         <div className="col-lg-4 text-center">
           <BigTitulo>Related videos</BigTitulo>
