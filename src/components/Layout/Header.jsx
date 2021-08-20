@@ -2,24 +2,25 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import clsx from 'clsx';
+
 import Buscar from './Buscar';
 import Navegacion from './Navegacion';
 
 import './Layout.styles.css';
 
 const Header = ({ onSearch, theme, handleClick }) => {
-  const HeaderClasses = theme
-    ? 'navbar navbar-expand-lg navbar-dark bg-obscuro'
-    : 'navbar navbar-expand-lg navbar-light bg-techno';
-  const LogoClasses = theme
-    ? 'navbar-brand text-uppercase text-light'
-    : 'navbar-brand text-uppercase text-dark';
-  const LinkClasses = theme ? 'text-light' : 'text-dark';
-
+  
   return (
-    <nav className={HeaderClasses} id="arriba">
+    <nav className={clsx('navbar navbar-expand-lg',{
+      'navbar-dark bg-obscuro': theme,
+      'navbar-light bg-techno': !theme
+    })} id="arriba">
       <div className="container-fluid">
-        <Link to="/" className={LogoClasses}>
+        <Link to="/" className={clsx('navbar-brand text-uppercase',{
+      'text-light': theme,
+      'text-dark': !theme
+    })}>
           YouTube client app
         </Link>
         <button
@@ -34,9 +35,9 @@ const Header = ({ onSearch, theme, handleClick }) => {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarText">
-          <Navegacion handleClick={handleClick} LinkClasses={LinkClasses} />
+          <Navegacion handleClick={handleClick} theme={theme} />
           <span className="navbar-text">
-            <Buscar onSearch={onSearch} LinkClasses={LinkClasses} />
+            <Buscar onSearch={onSearch} theme={theme} />
           </span>
         </div>
       </div>

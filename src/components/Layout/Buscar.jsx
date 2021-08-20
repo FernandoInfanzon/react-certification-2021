@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import clsx from 'clsx';
+
 import { Button } from '../Styles/global.styled';
 
-const Buscar = ({ onSearch, LinkClasses }) => {
-  const ButtonClasses = `btn btn-outline-success ${LinkClasses}`;
-  const ColorIcon = LinkClasses === 'text-dark' ? 'black' : 'white';
+const Buscar = ({ onSearch, theme }) => {
+  const ColorIcon = !theme ? 'black' : 'white';
 
   const [value, setValue] = useState({
     word: 'mexico',
@@ -50,7 +51,11 @@ const Buscar = ({ onSearch, LinkClasses }) => {
         value={value.word}
         onChange={handleChange}
       />
-      <Button className={ButtonClasses} type="submit">
+      <Button className={clsx(
+          'btn btn-outline-success',{
+          'text-light': theme,
+          'text-dark': !theme
+          })} type="submit">
         Search
       </Button>
       <Link to="/login" className="ps-4">

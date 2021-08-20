@@ -1,5 +1,7 @@
 import React, { useContext, useReducer } from 'react';
 
+import clsx from 'clsx';
+
 import './Layout.styles.css';
 
 import Header from './Header';
@@ -31,10 +33,8 @@ function Layout({ children, onSearch }) {
     setTheme(!theme);
   };
 
-  const BodyClasses = theme ? 'bg-dark' : 'bg-light';
-
   return (
-    <div className={BodyClasses}>
+    <div className={clsx({'bg-dark':theme, 'bg-light':!theme})}>
       <Header onSearch={onSearch} handleClick={handleClick} theme={theme} />
       <main className="container pb-5">{children}</main>
       <Footer />
