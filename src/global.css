@@ -21,6 +21,9 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   font-family: 'Oxygen', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1,
@@ -56,4 +59,8 @@ a {
 }
 .bg-white {
   background-color: #fff;
+}
+
+.dropdown-toggle::after {
+  color: white;
 }

@@ -34,8 +34,8 @@ function Layout({ children, onSearch }) {
   };
 
   return (
-    <div className={clsx({'bg-dark':theme, 'bg-light':!theme})}>
-      <Header onSearch={onSearch} handleClick={handleClick} theme={theme} />
+    <div className={clsx({ 'bg-dark': theme, 'bg-light': !theme })}>
+      <Header onSearch={onSearch} handleClick={handleClick} />
       <main className="container pb-5">{children}</main>
       <Footer />
     </div>

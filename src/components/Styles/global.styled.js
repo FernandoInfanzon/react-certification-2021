@@ -57,6 +57,23 @@ export const Button = styled.button`
   color: black;
 `;
 
+export const Dropdown = styled.ul`
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 5rem;
+  padding: 0.5rem 0;
+  margin: -20px;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+`;
+
 /* <Footer /> */
 export const FooterP = styled.p`
   color: grey;

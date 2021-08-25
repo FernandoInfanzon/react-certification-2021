@@ -4,7 +4,7 @@ import { FooterP, SmallP } from '../Styles/global.styled';
 
 const Footer = () => {
   return (
-    <footer className="footer mt-auto py-3 bg-dark">
+    <footer className="footer mt-auto py-3 bg-dark bg-gradient">
       <div className="container text-center">
         <FooterP className="text-muted text-center">Luis F. Infanzón M.</FooterP>
         <SmallP className="text-muted text-center">

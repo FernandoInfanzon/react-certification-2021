@@ -6,6 +6,8 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import Video from '../../pages/Video';
 import Layout from '../Layout';
+import { Favorites } from '../../private/Favorites';
+import Private from '../Private';
 
 import youtubeApi from '../../api/youtube';
 import ScrollToTop from '../ScrollToTop';
@@ -39,6 +41,9 @@ function App() {
             <Home videoList={videoList} setVideoList={setVideoList} />
           </Route>
           <Route exact path="/login" component={LoginPage} />
+          <Private exact path="/favorites">
+            <Favorites />
+          </Private>
           <Route exact path="/video/:id">
             <Video videoList={videoList} setVideoList={setVideoList} />
           </Route>
