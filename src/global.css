@@ -64,3 +64,9 @@ a {
 .dropdown-toggle::after {
   color: white;
 }
+
+
+#corazon {
+  margin-top: -30px;
+  cursor: pointer;
+}

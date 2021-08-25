@@ -6,7 +6,7 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import Video from '../../pages/Video';
 import Layout from '../Layout';
-import { Favorites } from '../../private/Favorites';
+import { Favorites } from '../../pages/private/Favorites';
 import Private from '../Private';
 
 import youtubeApi from '../../api/youtube';
