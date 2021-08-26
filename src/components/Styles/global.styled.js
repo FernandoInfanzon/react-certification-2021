@@ -57,6 +57,30 @@ export const Button = styled.button`
   color: black;
 `;
 
+export const Dropdown = styled.ul`
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 5rem;
+  padding: 0.5rem 0;
+  margin: -20px;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+`;
+
+export const ImagenIcon = styled.img`
+  max-width: 100%;
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+`;
+
 /* <Footer /> */
 export const FooterP = styled.p`
   color: grey;
@@ -66,4 +90,8 @@ export const FooterP = styled.p`
 export const SmallP = styled.p`
   color: grey;
   font-size: 0.5em;
+`;
+
+export const Espacio = styled.div`
+  height: 80vh;
 `;

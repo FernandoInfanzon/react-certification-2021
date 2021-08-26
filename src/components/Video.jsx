@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { CorazonLleno } from './Layout/CorazonLleno';
+import { CorazonVacio } from './Layout/CorazonVacio';
+
 import { P, Titulo, Imagen } from './Styles/global.styled';
+
+import ThemeContext from '../context/ThemeContext';
+// import { set } from 'object-path';
 
 function Video({
   title,
@@ -14,8 +20,13 @@ function Video({
   videoDescription,
   clasesCard,
 }) {
+  const [corazon, setCorazon] = useState(false);
+  // bi-heart-fill
+  // bi-suit-heart
+
   const selectVideo = (videoId, itemDescription, itemTitle) => {
     setVideoList({
+      // eslint-disable-next-line
       ...videoList,
       selectedVideoId: videoId,
       selectedVideoDescription: itemDescription,
@@ -23,7 +34,30 @@ function Video({
     });
   };
 
+  const { autenticado, favoritosList, setFavoritosList } = useContext(ThemeContext);
+
   const url = `/video/${videoList.selectedVideoId}`;
+
+  const actualizarListado = () => {
+    const filtro = favoritosList.filter((item) => item.llave !== llave);
+
+    setFavoritosList(filtro);
+  };
+
+  const handleRemoveItem = () => {
+    actualizarListado();
+    console.log('Se ejecutó la función de borrar');
+  };
+
+  const handleClick = () => {
+    if (!corazon) {
+      setFavoritosList([...favoritosList, [llave, videoDescription, title, imagen]]);
+      setCorazon(!corazon);
+    } else {
+      handleRemoveItem(llave);
+      setCorazon(!corazon);
+    }
+  };
 
   return (
     <div className={clasesCard}>
@@ -35,6 +69,18 @@ function Video({
           <Link to={url} onClick={() => selectVideo(llave, videoDescription, title)}>
             <Titulo>{title}</Titulo>
           </Link>
+
+          {autenticado ? (
+            // eslint-disable-next-line
+            <div
+              className="text-end"
+              id="corazon"
+              title="Add to Favorites"
+              onClick={() => handleClick(llave, videoDescription, title, imagen)}
+            >
+              {corazon ? <CorazonLleno /> : <CorazonVacio />}
+            </div>
+          ) : null}
           <P>{description}</P>
         </div>
       </div>

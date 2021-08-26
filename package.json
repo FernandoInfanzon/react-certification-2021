@@ -1,5 +1,5 @@
 {
-  "name": "react-certification-2020",
+  "name": "react-certification-2021",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "clsx": "^1.1.1",
     "jshint": "^2.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
