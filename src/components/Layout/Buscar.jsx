@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import clsx from 'clsx';
 
-import { Button, Dropdown } from '../Styles/global.styled';
+import { Button, Dropdown, ImagenIcon } from '../Styles/global.styled';
 
 import ThemeContext from '../../context/ThemeContext';
 
@@ -80,8 +80,8 @@ const Buscar = ({ onSearch }) => {
           <Link to="/login" className="ps-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="50"
+              height="30"
               fill={ColorIcon}
               className="bi bi-person-circle"
               viewBox="0 0 16 16"
@@ -102,13 +102,7 @@ const Buscar = ({ onSearch }) => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img
-                width="50"
-                height="50"
-                className="img-fluid"
-                src={perfil.avatarUrl}
-                alt={perfil.name}
-              />
+              <ImagenIcon src={perfil.avatarUrl} alt={perfil.name} />
             </button>
 
             <Dropdown className="dropdown-menu" aria-labelledby="dropdownMenuLink">

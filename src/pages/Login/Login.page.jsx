@@ -7,13 +7,16 @@ import './Login.styles.css';
 
 import ThemeContext from '../../context/ThemeContext';
 
-import { AUTH_STORAGE_KEY } from '../../utils/constants';
-import { storage } from '../../utils/storage';
+// import { AUTH_STORAGE_KEY } from '../../utils/constants';
+// import { storage } from '../../utils/storage';
+// import  {useLocalStorage} from '../../utils/hooks/useLocalStorage';
 
 function LoginPage() {
   const history = useHistory();
 
-  const { setAutenticado, setPerfil } = useContext(ThemeContext);
+  const { autenticado, setAutenticado, setPerfil } = useContext(ThemeContext);
+
+  // const [error, setError] = useState(false);
 
   const [datos, setDatos] = useState({
     username: null,
@@ -29,23 +32,42 @@ function LoginPage() {
 
   const authenticate = async (event) => {
     event.preventDefault();
-    console.log('revisar loggin');
     const resultado = await loginApi(datos.username, datos.password);
+    console.log(resultado);
+
     setPerfil({
       id: resultado.id,
       name: resultado.name,
       avatarUrl: resultado.avatarUrl,
     });
 
+    const setValue = (value) => {
+      try {
+        window.localStorage.setItem(autenticado, JSON.stringify(value));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     if (resultado.name !== '') {
       setAutenticado(true);
-      storage.set(AUTH_STORAGE_KEY, true);
+      setValue(autenticado);
+
       try {
         // await dispatch(action) // dispatch to redux or send a fetch
         history.push('/favorites'); // redirects if no errors
       } catch (err) {
         history.push('*'); // redirects if an error
       }
+    }
+
+    if (autenticado === false) {
+      console.log('hubo un error');
+      // setError(true);
+      setDatos({
+        username: null,
+        password: null,
+      });
     }
   };
 
