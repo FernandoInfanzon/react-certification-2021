@@ -14,7 +14,7 @@ import ThemeContext from '../../context/ThemeContext';
 function LoginPage() {
   const history = useHistory();
 
-  const { autenticado, setAutenticado, perfil, setPerfil } = useContext(ThemeContext);
+  const {  setAutenticado, perfil, setPerfil } = useContext(ThemeContext);
 
   const [error, setError] = useState('');
 
@@ -62,7 +62,7 @@ function LoginPage() {
 
   const authenticate = async (event) => {
     event.preventDefault();
-    const resultado = await loginApi(datos.username, datos.password).then(
+    await loginApi(datos.username, datos.password).then(
       usuario => setPerfil({
         id: usuario.id,
         name: usuario.name,
