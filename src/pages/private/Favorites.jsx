@@ -19,13 +19,13 @@ export const Favorites = () => {
             'text-dark': !theme,
           })}
         >
-          Welcome {perfil.name}
+          Welcome to {perfil.name}&apos;s Favorite Videos
         </h1>
         {favoritosList.length > 0 ? (
           <VideosFavoritos favoritosList={favoritosList} clasesCard={clasesCard} />
         ) : (
           <>
-            <div className="alert alert-danger d-flex align-items-center" role="alert">
+            <div className="alert alert-warning d-flex align-items-center" role="alert">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"

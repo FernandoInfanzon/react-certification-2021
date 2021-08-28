@@ -11,7 +11,7 @@ import { AUTH_STORAGE_KEY } from '../../utils/constants';
 import { storage } from '../../utils/storage';
 
 const Buscar = ({ onSearch }) => {
-  const { theme, autenticado, setAutenticado, perfil, setPerfil } = useContext(
+  const { theme, autenticado, setAutenticado, perfil, setPerfil, setFavoritosList } = useContext(
     ThemeContext
   );
 
@@ -38,7 +38,12 @@ const Buscar = ({ onSearch }) => {
 
   const logout = () => {
     setAutenticado(false);
-    setPerfil({});
+    setPerfil({
+      id: '',
+      name: '',
+      avatarUrl: '',
+    });
+    setFavoritosList([]);
     storage.set(AUTH_STORAGE_KEY, false);
   };
 
