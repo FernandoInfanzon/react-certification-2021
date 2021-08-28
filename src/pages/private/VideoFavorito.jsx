@@ -1,14 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import { P, Titulo, Imagen } from '../../components/Styles/global.styled';
 
+import { CorazonLleno } from '../../components/Layout/CorazonLleno';
+import { CorazonVacio } from '../../components/Layout/CorazonVacio';
+
 import ThemeContext from '../../context/ThemeContext';
 // import { set } from 'object-path';
 
 function VideoFavorito({ title, imagen, description, key, llave, clasesCard }) {
-  const { setFavoritoSelected } = useContext(ThemeContext);
+  const { setFavoritoSelected, favoritosList, setFavoritosList } = useContext(ThemeContext);
+
+  const [corazon, setCorazon] = useState(true);
+
 
   const selectVideo = () => {
     setFavoritoSelected({
@@ -17,6 +23,30 @@ function VideoFavorito({ title, imagen, description, key, llave, clasesCard }) {
       selectedVideoTitle: title,
     });
   };
+
+  const actualizarListado = (llaveBorrar) => {
+    const nuevoFavoritos = favoritosList.filter(item => item[0] !== llaveBorrar);
+    setFavoritosList(nuevoFavoritos);
+    console.log(nuevoFavoritos);
+  };
+
+  const handleRemoveItem = (llaveABorrar) => {
+    actualizarListado(llaveABorrar);
+    console.log('Se ejecutó la función de borrar');
+    
+  };
+
+  const handleClick = () => {
+    if (!corazon) {
+      setFavoritosList([...favoritosList, [llave, description, title, imagen]]);
+      setCorazon(!corazon);
+    } else {
+      handleRemoveItem(llave);
+      setCorazon(!corazon);
+    }
+  };
+
+  
 
   const url = `/video_favorito/${llave}`;
 
@@ -30,7 +60,15 @@ function VideoFavorito({ title, imagen, description, key, llave, clasesCard }) {
           <Link to={url} onClick={() => selectVideo(llave, description, title)}>
             <Titulo>{title}</Titulo>
           </Link>
-
+          
+          <div
+              className="text-end"
+              id="corazon"
+              title="Add to Favorites"
+              onClick={() => handleClick(llave, description, title, imagen)}
+            >
+              {corazon ? <CorazonLleno /> : <CorazonVacio />}
+            </div>
           <P>{description}</P>
         </div>
       </div>
