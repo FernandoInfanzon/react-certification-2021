@@ -9,11 +9,11 @@ import VideoFav from '../../pages/VideoFav';
 import Layout from '../Layout';
 import { Favorites } from '../../pages/private/Favorites';
 import Private from '../Private';
+import ScrollToTop from '../ScrollToTop';
 
 import ThemeContext from '../../context/ThemeContext';
 
 import youtubeApi from '../../api/youtube';
-import ScrollToTop from '../ScrollToTop';
 
 function App() {
   const { favoritoSelected, favoritosList } = useContext(ThemeContext);
@@ -51,6 +51,7 @@ function App() {
           </Private>
           <Route exact path="/video/:id">
             <Video videoList={videoList} setVideoList={setVideoList} />
+            <ScrollToTop />
           </Route>
           <Private exact path="/video_favorito/:id">
             <VideoFav favoritoSelected={favoritoSelected} favoritosList={favoritosList} />
@@ -59,7 +60,6 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-        <ScrollToTop />
       </Layout>
     </Router>
   );

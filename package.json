@@ -37,7 +37,8 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
     "prettier": "^2.1.1",
-    "pretty-quick": "^3.0.0"
+    "pretty-quick": "^3.0.0",
+    "react-test-renderer": "^17.0.2"
   },
   "browserslist": {
     "production": [

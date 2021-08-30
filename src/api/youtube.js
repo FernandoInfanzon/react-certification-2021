@@ -7,7 +7,7 @@ export default axios.create({
   params: {
     part: 'snippet',
     regionCode: 'MX',
-    maxResults: 20,
+    maxResults: 40,
     key: KEY,
   },
   headers: {},
