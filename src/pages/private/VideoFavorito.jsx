@@ -66,6 +66,7 @@ function VideoFavorito({ title, imagen, description, key, llave, clasesCard }) {
               id="corazon"
               title="Add to Favorites"
               onClick={() => handleClick(llave, description, title, imagen)}
+              role="none"
             >
               {corazon ? <CorazonLleno /> : <CorazonVacio />}
             </div>
