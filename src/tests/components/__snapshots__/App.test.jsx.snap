@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Test App Component 1`] = `
+<div
+  className="bg-light"
+>
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-techno"
+    id="arriba"
+  >
+    <div
+      className="container-fluid"
+    >
+      <a
+        className="navbar-brand text-uppercase text-dark"
+        href="/"
+        onClick={[Function]}
+      >
+        YouTube client app
+      </a>
+      <button
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        data-bs-target="#navbarText"
+        data-bs-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="navbarText"
+      >
+        <ul
+          className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5"
+        >
+          <li
+            className="sc-gtsrHT cnolFt nav-item"
+          >
+            <a
+              aria-current="page"
+              className="nav-link active text-dark"
+              href="/"
+              onClick={[Function]}
+            >
+              Home
+            </a>
+          </li>
+          <li
+            className="sc-gtsrHT cnolFt"
+          >
+            <div
+              className="form-check form-switch d-flex align-items-center"
+            >
+              <div
+                className="pt-2"
+              >
+                <input
+                  className="form-check-input"
+                  id="darkMode"
+                  name="darkMode"
+                  onClick={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="darkMode"
+                >
+                  Dark Mode
+                </label>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <span
+          className="navbar-text"
+        >
+          <form
+            className="d-flex flex-row "
+            onSubmit={[Function]}
+          >
+            <input
+              aria-label="Search"
+              className="form-control me-2"
+              name="word"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value="mexico"
+            />
+            <button
+              className="sc-fujyAs wgCwF btn btn-outline-success text-dark"
+              type="submit"
+            >
+              Search
+            </button>
+            <a
+              className="ps-4"
+              href="/login"
+              onClick={[Function]}
+            >
+              <svg
+                className="bi bi-person-circle"
+                fill="black"
+                height="30"
+                viewBox="0 0 16 16"
+                width="50"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+                />
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </a>
+          </form>
+        </span>
+      </div>
+    </div>
+  </nav>
+  <main
+    className="container pb-5"
+  >
+    <h1
+      className="sc-bdnxRM bZjIND"
+      role="heading"
+    >
+      Welcome to the Challenge!
+    </h1>
+    <div
+      className="container"
+    >
+      <div
+        className="row justify-content-center g-3"
+      />
+    </div>
+  </main>
+  <footer
+    className="footer mt-auto py-3 bg-dark bg-gradient"
+  >
+    <div
+      className="container text-center"
+    >
+      <p
+        className="sc-kEqXSa EsNga text-muted text-center"
+      >
+        Luis F. Infanzón M.
+      </p>
+      <p
+        className="sc-iqAclL izIWgQ text-muted text-center"
+      >
+        Wizeline Academy - 2021 React Bootcamp
+      </p>
+      <p
+        className="sc-iqAclL izIWgQ text-muted text-center"
+      >
+        Mini Challenge 5
+      </p>
+    </div>
+  </footer>
+</div>
+`;

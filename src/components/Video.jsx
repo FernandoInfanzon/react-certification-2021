@@ -38,15 +38,16 @@ function Video({
 
   const url = `/video/${videoList.selectedVideoId}`;
 
-  const actualizarListado = () => {
-    const filtro = favoritosList.filter((item) => item.llave !== llave);
-
-    setFavoritosList(filtro);
+  const actualizarListado = (llaveBorrar) => {
+    const nuevoFavoritos = favoritosList.filter(item => item[0] !== llaveBorrar);
+    setFavoritosList(nuevoFavoritos);
+    console.log(nuevoFavoritos);
   };
 
-  const handleRemoveItem = () => {
-    actualizarListado();
+  const handleRemoveItem = (llaveABorrar) => {
+    actualizarListado(llaveABorrar);
     console.log('Se ejecutó la función de borrar');
+    
   };
 
   const handleClick = () => {

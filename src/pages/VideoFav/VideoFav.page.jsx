@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import VideosFavoritos from '../private/VideosFavoritos';
+import ScrollToTop from '../../components/ScrollToTop';
 
 import ThemeContext from '../../context/ThemeContext';
 
@@ -38,6 +39,7 @@ function VideoFavPage() {
         <div className="col-lg-4 text-center">
           <BigTitulo>Favorite videos</BigTitulo>
           <VideosFavoritos favoritosList={favoritosList} />
+          <ScrollToTop />
         </div>
       </div>
     </section>

@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
-
 import { BrowserRouter } from 'react-router-dom';
 
-import Video from '../../components/Videos';
+import VideoPage from '../../../pages/Video/Video.page';
 
 const videoList = {
   videosMetaInfo: [
@@ -45,15 +44,16 @@ const videoList = {
       },
     },
   ],
+  selectedVideoId: 'RdKAvtCsJJE',
 };
 
-describe('Videos List', () => {
-  it('select the first Video and test if the info is correctly rendered', () => {
+describe('Video Page ', () => {
+  it('must display Video details', () => {
     render(
       <BrowserRouter>
-        <Video videoList={videoList} />
+        <VideoPage videoList={videoList} />
       </BrowserRouter>
     );
-    expect(screen.getByText(/méxico/i)).toBeInTheDocument();
+    expect(screen.getByText(/Resumen y goles/i)).toBeInTheDocument();
   });
 });
